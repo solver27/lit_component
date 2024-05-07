@@ -1,0 +1,13 @@
+.app {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.parent {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
