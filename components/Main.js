@@ -1,12 +1,12 @@
-import { useContext, createContext, useState } from 'react';
-import LIT from './components/LIT/LIT';
-import LitVue from './components/LitVue';
-import './App.css';
+import * as React from 'react'
+import VueWrapper from './VueWrapper'
+import './style.css';
 
-export const LITContext = createContext({});
+export const LITContext = React.createContext({});
 
-const App = () => {
-  const [data, setData] = useState({
+export default function Main() {
+
+  const [data, setData] = React.useState({
     selectedField: null,
     actions: {}
   })
@@ -41,11 +41,9 @@ const App = () => {
             pass data to lit component
           </button>
         </div>
-        <LIT callback={updateField} />
-        <LitVue callback={updateField} />
+        {/* <LIT callback={updateField} /> */}
+        <VueWrapper componentProps={{ data: data, callback: updateField }}/>
       </LITContext.Provider>
     </div>
   );
 }
-
-export default App;
