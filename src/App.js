@@ -1,5 +1,6 @@
 import { useContext, createContext, useState } from 'react';
 import LIT from './components/LIT/LIT';
+import LitVue from './components/LitVue';
 import './App.css';
 
 export const LITContext = createContext({});
@@ -40,7 +41,8 @@ const App = () => {
             pass data to lit component
           </button>
         </div>
-        <LIT callback={updateField}></LIT>
+        <LIT callback={updateField} />
+        <LitVue callback={updateField} />
       </LITContext.Provider>
     </div>
   );
